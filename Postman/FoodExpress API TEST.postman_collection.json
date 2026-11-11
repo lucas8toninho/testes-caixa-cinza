@@ -1,0 +1,311 @@
+{
+	"info": {
+		"_postman_id": "1762c822-a8fb-4ee1-8a8e-5473c4986115",
+		"name": "FoodExpress API TEST",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "60032618",
+		"_collection_link": "https://www.postman.com/lucas8toninho-3121692/workspace/foodexpress/collection/60032618-1762c822-a8fb-4ee1-8a8e-5473c4986115?action=share&source=collection_link&creator=60032618"
+	},
+	"item": [
+		{
+			"name": "requisição 1 - Login valido",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "apikey",
+						"value": "{{api_key}}",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {{api_key}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"{{email}}\",\r\n    \"password\": \"{{password}}\"\r\n}"
+				},
+				"url": {
+					"raw": "{{base_url}}/auth/v1/token?grant_type=password",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"auth",
+						"v1",
+						"token"
+					],
+					"query": [
+						{
+							"key": "grant_type",
+							"value": "password"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "requisição 2 - senha incorreta Copy",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "apikey",
+						"value": "{{api_key}}",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {{api_key}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"{{email}}\",\r\n    \"password\": \"SenhaIncorreta123\"\r\n}"
+				},
+				"url": {
+					"raw": "{{base_url}}/auth/v1/token?grant_type=password",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"auth",
+						"v1",
+						"token"
+					],
+					"query": [
+						{
+							"key": "grant_type",
+							"value": "password"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "requisição 3 - Usuário Incorreto",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "apikey",
+						"value": "{{api_key}}",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {{api_key}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"UsuarioErrado123\",\r\n    \"password\": \"{{password}}\"\r\n}"
+				},
+				"url": {
+					"raw": "{{base_url}}/auth/v1/token?grant_type=password",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"auth",
+						"v1",
+						"token"
+					],
+					"query": [
+						{
+							"key": "grant_type",
+							"value": "password"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "requisição 4 - Campos vazios",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "apikey",
+						"value": "{{api_key}}",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {{api_key}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"\",\r\n    \"password\": \"\"\r\n}"
+				},
+				"url": {
+					"raw": "{{base_url}}/auth/v1/token?grant_type=password",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"auth",
+						"v1",
+						"token"
+					],
+					"query": [
+						{
+							"key": "grant_type",
+							"value": "password"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "requisição 5 - Campos incorretos",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "apikey",
+						"value": "{{api_key}}",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {{api_key}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"suarioErrado123\",\r\n    \"password\": \"SenhaIncorreta123\"\r\n}"
+				},
+				"url": {
+					"raw": "{{base_url}}/auth/v1/token?grant_type=password",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"auth",
+						"v1",
+						"token"
+					],
+					"query": [
+						{
+							"key": "grant_type",
+							"value": "password"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					"pm.test(\"Cenário 1: Login válido - Status 200 e access token\", function () {",
+					"    if (pm.response.code === 200) {",
+					"        pm.response.to.have.status(200);",
+					"        ",
+					"        var jsonData = pm.response.json();",
+					"        pm.expect(jsonData).to.have.property('access_token');",
+					"    }",
+					"});",
+					"",
+					"pm.test(\"Cenário 2: Senha incorreta - Erro de autenticação\", function () {",
+					"    if (pm.response.code === 401) {",
+					"        pm.response.to.have.status(401);",
+					"        var jsonData = pm.response.json();",
+					"    ",
+					"        pm.expect(jsonData).to.satisfy(function(body) {",
+					"            return body.message || body.error;",
+					"        });",
+					"    }",
+					"});",
+					"",
+					"",
+					"pm.test(\"Cenário 3: Usuário inexistente - Acesso negado\", function () {",
+					"    if (pm.response.code === 404 || pm.response.code === 401) {",
+					"        pm.expect(pm.response.code).to.be.oneOf([401, 404]);",
+					"    }",
+					"});",
+					"",
+					"pm.test(\"Cenário 4: Campos vazios - Erro de validação\", function () {",
+					"    if (pm.response.code === 400) {",
+					"        pm.response.to.have.status(400);",
+					"    }",
+					"});",
+					"",
+					"",
+					"pm.test(\"Cenário 5: Credenciais inválidas - Mensagem de erro presente\", function () {",
+					"    var jsonData = pm.response.json();",
+					"",
+					"    pm.expect(jsonData).to.satisfy(function(body) {",
+					"        return body.message !== undefined || body.error !== undefined || body.mensagem !== undefined;",
+					"    });",
+					"});"
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
